@@ -12,13 +12,11 @@ export default {
     AppMain
   }
 }
-
 </script>
 
 <template>
   <AppHeader />
   <AppMain />
-  <AppFeatures />
   <AppFooter />
 
 </template>
