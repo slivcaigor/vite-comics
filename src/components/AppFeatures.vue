@@ -1,46 +1,46 @@
 <script>
 export default {
-  methods: {
-    // takes an imgPath parameter and returns the full URL of an image file based on the given imgPath
-    getImageURL: function (imgPath) {
-      // uses the URL constructor to create a new URL object based on the imgPath parameter and the import.meta.url property
-      return new URL(imgPath, import.meta.url).href;
+  data() {
+    return {
+      features: [
+        {
+          text: 'digital comics',
+          icon: 'src/assets/img/buy-comics-digital-comics.png',
+          alt: 'digital comics icon'
+        },
+        {
+          text: 'dc merchandise',
+          icon: 'src/assets/img/buy-comics-merchandise.png',
+          alt: 'dc merchandise icon'
+        },
+        {
+          text: 'subscription',
+          icon: 'src/assets/img/buy-comics-subscriptions.png',
+          alt: 'subscription icon'
+        },
+        {
+          text: 'comic shop locator',
+          icon: 'src/assets/img/buy-comics-shop-locator.png',
+          alt: 'comic shop locator icon'
+        },
+        {
+          text: 'dc power visa',
+          icon: 'src/assets/img/buy-dc-power-visa.svg',
+          alt: 'dc power visa icon'
+        },
+      ],
     }
-  }
+  },
 }
-
 </script>
 
 <template>
-
   <section class="features">
     <div class="container">
-
-      <div class="item">
-        <img :src="getImageURL(`../assets/img/buy-comics-digital-comics.png`)" alt="">
-        <h3>digital comics</h3>
+      <div v-for="(item, index) in features" :key="index" class="item">
+        <img :src="item.icon" :alt="item.alt">
+        <h3>{{ item.text }}</h3>
       </div>
-
-      <div class="item">
-        <img :src="getImageURL(`../assets/img/buy-comics-merchandise.png`)" alt="">
-        <h3>dc merchandise</h3>
-      </div>
-
-      <div class="item">
-        <img :src="getImageURL(`../assets/img/buy-comics-subscriptions.png`)" alt="">
-        <h3>subscription</h3>
-      </div>
-
-      <div class="item">
-        <img :src="getImageURL(`../assets/img/buy-comics-shop-locator.png`)" alt="">
-        <h3>comic shop locator</h3>
-      </div>
-
-      <div class="item">
-        <img :src="getImageURL(`../assets/img/buy-dc-power-visa.svg`)" alt="">
-        <h3>dc power visa</h3>
-      </div>
-
     </div>
   </section>
 </template>

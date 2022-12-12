@@ -1,5 +1,4 @@
 <script>
-
 </script>
 
 <template>
@@ -19,14 +18,13 @@
 @use '../styles/partials/variables' as *;
 
 .main-content {
-  height: 500px;
-  background-color: $secondary;
-  color: $primary;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/jumbotron.jpg");
+}
 
-  h1 {
-    @include center();
-    height: 500px;
-    font-size: $text-h1;
-  }
+h1 {
+  @include center();
+  height: 500px;
+  font-size: $text-h1;
+  color: $primary;
 }
 </style>
