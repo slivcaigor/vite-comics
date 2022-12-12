@@ -4,9 +4,8 @@ import AppFeatures from './AppFeatures.vue'
 export default {
   components: {
     AppFeatures
-  }
+  },
 }
-
 </script>
 
 <template>

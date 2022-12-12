@@ -2,6 +2,7 @@
 export default {
   data() {
     return {
+      activeItem: 0,
       links: [
         {
           text: 'Characters',
@@ -66,13 +67,6 @@ export default {
       // uses the URL constructor to create a new URL object based on the imgPath parameter and the import.meta.url property
       return new URL(imgPath, import.meta.url).href;
     },
-    clicked(index) {
-      // takes an index parameter, which is the index of the clicked menu item
-      this.links.forEach((item, i) => {
-        // sets the current property of a menu item to true if the index of the current item in the forEach() loop is the same as the index parameter passed to the method
-        item.current = index === i;
-      });
-    }
   }
 }
 </script>
@@ -93,7 +87,7 @@ export default {
             <!-- For each object in the links array, it creates a <li> element that contains an <a> element -->
             <!-- The <a> element has the active class applied to it if the current property of the link object is true. -->
             <!-- @click event listener that calls the clicked() method with the index of the link object as an argument -->
-            <a :class="{ active: link.current }" href="#" @click="clicked(index)">
+            <a :class="{ active: index === activeItem }" href="#" @click="activeItem = index">
               {{ link.text }}
             </a>
           </li>
