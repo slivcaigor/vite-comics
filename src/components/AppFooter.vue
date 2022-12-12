@@ -149,27 +149,29 @@ export default {
       </div>
     </div>
     <div class="container">
-      <nav>
-        <ul>
-          <li v-for="(link, index) in footerFirstNav" :key="index">
-            <h3>{{ link.heading }}</h3>
-            <a href="#">
-              {{ link.text }}
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <div>
+        <nav>
+          <ul>
+            <li v-for="(link, index) in footerFirstNav" :key="index">
+              <h3>{{ link.heading }}</h3>
+              <a href="#">
+                {{ link.text }}
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-      <nav>
-        <ul>
-          <li v-for="(link, index) in footerSecondNav" :key="index">
-            <h3>{{ link.heading }}</h3>
-            <a href="#">
-              {{ link.text }}
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav>
+          <ul>
+            <li v-for="(link, index) in footerSecondNav" :key="index">
+              <h3>{{ link.heading }}</h3>
+              <a href="#">
+                {{ link.text }}
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <nav>
         <ul>
@@ -227,11 +229,15 @@ footer {
     }
   }
 
+  nav:first-child {
+    padding-bottom: 1em;
+  }
+
   ul li {
     list-style-type: none;
 
     a {
-      color: $primary;
+      color: $footer-nav;
       text-decoration: none;
       text-transform: capitalize;
     }
