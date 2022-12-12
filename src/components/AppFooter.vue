@@ -127,6 +127,33 @@ export default {
           url: '#',
         },
       ],
+      footerSocials: [
+        {
+          image: 'src/assets/img/footer-facebook.png',
+          url: '#',
+          altText: 'Facebook Logo'
+        },
+        {
+          image: 'src/assets/img/footer-twitter.png',
+          url: '#',
+          altText: 'Twitter Logo'
+        },
+        {
+          image: 'src/assets/img/footer-youtube.png',
+          url: '#',
+          altText: 'YouTube Logo'
+        },
+        {
+          image: 'src/assets/img/footer-pinterest.png',
+          url: '#',
+          altText: 'Pinterest Logo'
+        },
+        {
+          image: 'src/assets/img/footer-periscope.png',
+          url: '#',
+          altText: 'Periscope Logo'
+        },
+      ],
     }
   },
   methods: {
@@ -145,7 +172,7 @@ export default {
   <footer>
     <div class="bg-image">
       <div class="overlay-image">
-        <img src="../assets/img/dc-logo-bg.png" alt="">
+        <img :src="getImageURL(`../assets/img/dc-logo-bg.png`)" alt="DC Logo">
       </div>
     </div>
     <div class="container">
@@ -160,7 +187,6 @@ export default {
             </li>
           </ul>
         </nav>
-
         <nav>
           <ul>
             <li v-for="(link, index) in footerSecondNav" :key="index">
@@ -183,7 +209,6 @@ export default {
           </li>
         </ul>
       </nav>
-
       <nav>
         <ul>
           <li v-for="(link, index) in footerForthNav" :key="index">
@@ -196,8 +221,19 @@ export default {
       </nav>
     </div>
 
+    <div class="footer-bottom">
+      <div class="container socials-box">
+        <a href="#">sign-up now&#33;</a>
+        <div class="socials">
+          <h4>follow us</h4>
+          <div v-for="(social, index) in footerSocials" :key="index">
+            <img :src="social.image" :alt="social.altText">
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="footer-bottom"></div>
+    <div class="bottom-bar"></div>
   </footer>
 
 </template>
@@ -221,8 +257,7 @@ footer {
   .overlay-image {
     position: absolute;
     top: -50px;
-    right: 5%;
-    z-index: 1;
+    right: 10%;
 
     img {
       max-width: 100%;
@@ -255,13 +290,42 @@ footer {
     display: flex;
     gap: 20px;
   }
+}
 
+.footer-bottom {
+  background-color: $third;
+  z-index: 77;
+  position: relative;
 
-  .footer-bottom {
-    background-color: $secondary;
-    height: 180px;
-    z-index: 77;
-    position: relative;
+  a {
+    color: $primary;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px;
+    border: 2px solid $accent;
+    text-decoration: none;
+    margin-right: auto;
   }
+
+  .socials {
+    @include center(horizontal);
+    gap: 1.2em;
+
+    h4 {
+      color: $accent;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+    }
+  }
+
+  .socials-box {
+    padding: 30px 0;
+  }
+}
+
+.bottom-bar {
+  background-color: $secondary;
+  height: 2em;
 }
 </style>
