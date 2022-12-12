@@ -1,5 +1,5 @@
 <script>
-import AppFeatures from './components/AppFeatures.vue'
+import AppFeatures from './AppFeatures.vue'
 
 export default {
   components: {
