@@ -54,6 +54,8 @@ export default {
 .features {
   background-color: $accent;
   color: $primary;
+  z-index: 77;
+  position: relative;
 
   .container {
     display: flex;
