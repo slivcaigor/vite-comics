@@ -23,7 +23,7 @@
 
 h1 {
   @include center();
-  height: 500px;
+  height: 31.25rem;
   font-size: $text-h1;
   color: $primary;
 }

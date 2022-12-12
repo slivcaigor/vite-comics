@@ -67,7 +67,7 @@ export default {
       // uses the URL constructor to create a new URL object based on the imgPath parameter and the import.meta.url property
       return new URL(imgPath, import.meta.url).href;
     },
-  }
+  },
 }
 </script>
 
@@ -79,14 +79,12 @@ export default {
         <!-- return the full URL of the image file -->
         <img :src="getImageURL(`../assets/img/dc-logo.png`)" :alt="logo.logoAlt">
       </a>
-
       <nav>
         <ul>
           <!-- v-for loop that iterates over an array of objects called links -->
           <li v-for="(link, index) in links" :key="index">
             <!-- For each object in the links array, it creates a <li> element that contains an <a> element -->
             <!-- The <a> element has the active class applied to it if the current property of the link object is true. -->
-            <!-- @click event listener that calls the clicked() method with the index of the link object as an argument -->
             <a :class="{ active: index === activeItem }" href="#" @click="activeItem = index">
               {{ link.text }}
             </a>
@@ -104,7 +102,7 @@ export default {
 @use '../styles/partials/variables' as *;
 
 .active {
-  border-bottom: 4px solid $accent;
+  border-bottom: 0.25rem solid $accent;
 }
 
 .top-bar {

@@ -168,14 +168,13 @@ export default {
 
 <template>
   <AppFeatures />
-
   <footer>
     <div class="bg-image">
       <div class="overlay-image">
         <img :src="getImageURL(`../assets/img/dc-logo-bg.png`)" alt="DC Logo">
       </div>
     </div>
-    <div class="container">
+    <div class="container-box container">
       <div>
         <nav>
           <ul>
@@ -198,7 +197,6 @@ export default {
           </ul>
         </nav>
       </div>
-
       <nav>
         <ul>
           <li v-for="(link, index) in footerThirdNav" :key="index">
@@ -220,9 +218,8 @@ export default {
         </ul>
       </nav>
     </div>
-
     <div class="footer-bottom">
-      <div class="container socials-box">
+      <div class="container-box socials-box container">
         <a href="#">sign-up now&#33;</a>
         <div class="socials">
           <h4>follow us</h4>
@@ -232,10 +229,8 @@ export default {
         </div>
       </div>
     </div>
-
     <div class="bottom-bar"></div>
   </footer>
-
 </template>
 
 
@@ -256,7 +251,7 @@ footer {
 
   .overlay-image {
     position: absolute;
-    top: -50px;
+    top: -3.125rem;
     right: 10%;
 
     img {
@@ -280,30 +275,31 @@ footer {
     h3 {
       color: $primary;
       text-transform: uppercase;
-      font-size: 24px;
+      font-size: 1.5rem;
       padding-bottom: .3em;
     }
   }
+}
 
-  .container {
-    padding: 50px 0;
-    display: flex;
-    gap: 20px;
-  }
+.container-box {
+  padding: 3.125rem 1em;
+  display: flex;
+  gap: 1.25em;
 }
 
 .footer-bottom {
   background-color: $third;
   z-index: 77;
   position: relative;
+  padding: 0 1em;
 
   a {
     color: $primary;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
-    padding: 12px;
-    border: 2px solid $accent;
+    padding: 0.75rem;
+    border: 0.125rem solid $accent;
     text-decoration: none;
     margin-right: auto;
   }
@@ -320,7 +316,7 @@ footer {
   }
 
   .socials-box {
-    padding: 30px 0;
+    padding: 1.875em 0;
   }
 }
 

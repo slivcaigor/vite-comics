@@ -67,8 +67,8 @@ export default {
     padding: 3em 0;
 
     img {
-      width: 60px;
-      height: 60px;
+      width: 3.75rem;
+      height: 3.75rem;
       object-fit: contain;
       padding-right: .7em;
     }
@@ -78,7 +78,6 @@ export default {
       font-weight: 600;
       font-size: $text-nav;
     }
-
   }
 }
 </style>
