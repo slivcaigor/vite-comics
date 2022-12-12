@@ -119,7 +119,7 @@ export default {
 }
 
 header {
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   @include center();
 
   a:first-child {
@@ -127,7 +127,7 @@ header {
   }
 
   img {
-    width: 70%;
+    width: 80%;
   }
 }
 
