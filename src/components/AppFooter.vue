@@ -160,7 +160,7 @@ export default {
     // takes an imgPath parameter and returns the full URL of an image file based on the given imgPath
     getImageURL: function (imgPath) {
       // uses the URL constructor to create a new URL object based on the imgPath parameter and the import.meta.url property
-      return new URL(imgPath, import.meta.url).href;
+      return new URL(`../assets/img/${imgPath}`, import.meta.url).href;
     },
   }
 }
@@ -171,7 +171,7 @@ export default {
   <footer>
     <div class="bg-image">
       <div class="overlay-image">
-        <img :src="getImageURL(`../assets/img/dc-logo-bg.png`)" alt="DC Logo">
+        <img :src="getImageURL(`dc-logo-bg.png`)" alt="DC Logo">
       </div>
     </div>
     <div class="container-box container">
@@ -180,7 +180,7 @@ export default {
           <ul>
             <li v-for="(link, index) in footerFirstNav" :key="index">
               <h3>{{ link.heading }}</h3>
-              <a href="#">
+              <a :href="link.url">
                 {{ link.text }}
               </a>
             </li>
@@ -190,7 +190,7 @@ export default {
           <ul>
             <li v-for="(link, index) in footerSecondNav" :key="index">
               <h3>{{ link.heading }}</h3>
-              <a href="#">
+              <a :href="link.url">
                 {{ link.text }}
               </a>
             </li>
@@ -201,7 +201,7 @@ export default {
         <ul>
           <li v-for="(link, index) in footerThirdNav" :key="index">
             <h3>{{ link.heading }}</h3>
-            <a href="#">
+            <a :href="link.url">
               {{ link.text }}
             </a>
           </li>
@@ -211,7 +211,7 @@ export default {
         <ul>
           <li v-for="(link, index) in footerForthNav" :key="index">
             <h3>{{ link.heading }}</h3>
-            <a href="#">
+            <a :href="link.url">
               {{ link.text }}
             </a>
           </li>
@@ -220,11 +220,11 @@ export default {
     </div>
     <div class="footer-bottom">
       <div class="container-box socials-box container">
-        <a href="#">sign-up now&#33;</a>
+        <a class="btn" href="#">sign-up now&#33;</a>
         <div class="socials">
           <h4>follow us</h4>
           <div v-for="(social, index) in footerSocials" :key="index">
-            <img :src="social.image" :alt="social.altText">
+            <a :href="social.url"><img :src="social.image" :alt="social.altText"></a>
           </div>
         </div>
       </div>
@@ -282,7 +282,7 @@ footer {
 }
 
 .container-box {
-  padding: 3.125rem 1em;
+  padding: 3.125rem 0;
   display: flex;
   gap: 1.25em;
 }
@@ -291,9 +291,8 @@ footer {
   background-color: $third;
   z-index: 77;
   position: relative;
-  padding: 0 1em;
 
-  a {
+  .btn {
     color: $primary;
     text-transform: uppercase;
     font-size: 1.25rem;

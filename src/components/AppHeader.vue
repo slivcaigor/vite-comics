@@ -55,17 +55,13 @@ export default {
           current: false,
         }
       ],
-      logo:
-      {
-        logoAlt: 'DC Comics Logo'
-      }
     }
   },
   methods: {
     // takes an imgPath parameter and returns the full URL of an image file based on the given imgPath
     getImageURL: function (imgPath) {
       // uses the URL constructor to create a new URL object based on the imgPath parameter and the import.meta.url property
-      return new URL(imgPath, import.meta.url).href;
+      return new URL(`../assets/img/${imgPath}`, import.meta.url).href;
     },
   },
 }
@@ -77,7 +73,7 @@ export default {
     <header>
       <a href="/">
         <!-- return the full URL of the image file -->
-        <img :src="getImageURL(`../assets/img/dc-logo.png`)" :alt="logo.logoAlt">
+        <img :src="getImageURL(`dc-logo.png`)" alt="DC Comics Logo">
       </a>
       <nav>
         <ul>
@@ -126,6 +122,7 @@ header {
 ul {
   list-style-type: none;
   @include center();
+  gap: 2em;
 
   li a {
     display: inline-block;
@@ -134,7 +131,7 @@ ul {
     font-weight: 600;
     text-transform: uppercase;
     color: $third;
-    padding: 1rem;
+    padding: .5em 0;
 
     &.active,
     &:hover {
