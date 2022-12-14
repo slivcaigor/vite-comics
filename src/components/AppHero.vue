@@ -3,14 +3,14 @@
 
 <template>
 
-  <main>
-  </main>
+  <section>
+  </section>
 
 </template>
 
 
 <style lang="scss" scoped>
-main {
+section {
   height: 31.25rem;
   background-image: url("../assets/img/jumbotron.jpg");
 }

@@ -70,7 +70,7 @@ export default {
 <template>
   <div class="top-bar"></div>
   <div class="container">
-    <header>
+    <section>
       <a href="/">
         <!-- return the full URL of the image file -->
         <img :src="getImageURL(`dc-logo.png`)" alt="DC Comics Logo">
@@ -87,7 +87,7 @@ export default {
           </li>
         </ul>
       </nav>
-    </header>
+    </section>
   </div>
 </template>
 
@@ -106,7 +106,7 @@ export default {
   height: 2em;
 }
 
-header {
+section {
   margin: 1.5rem 0;
   @include center();
 

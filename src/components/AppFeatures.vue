@@ -35,7 +35,7 @@ export default {
 </script>
 
 <template>
-  <section class="features">
+  <div class="features">
     <div class="container">
       <!-- v-for loop through an array of features and render a div element for each item in the array. -->
       <div v-for="(item, index) in features" :key="index" class="item">
@@ -45,7 +45,7 @@ export default {
         <h3>{{ item.text }}</h3>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 

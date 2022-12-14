@@ -168,7 +168,7 @@ export default {
 
 <template>
   <AppFeatures />
-  <footer>
+  <section>
     <div class="bg-image">
       <div class="overlay-image">
         <!-- :src attribute binding to set the src attribute to the result of calling the getImageURL() function -->
@@ -239,7 +239,7 @@ export default {
       </div>
     </div>
     <div class="bottom-bar"></div>
-  </footer>
+  </section>
 </template>
 
 
@@ -248,7 +248,7 @@ export default {
 @use '../styles/partials/mixins.scss' as *;
 @use '../styles/partials/variables' as *;
 
-footer {
+section {
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;

@@ -88,7 +88,7 @@ export default {
 
 <template>
 
-  <main class="main-content">
+  <section class="main-content">
     <div class="container">
       <div class="series">
         <h2>current series</h2>
@@ -105,7 +105,7 @@ export default {
         <a class="btn" href="#">load more</a>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 
