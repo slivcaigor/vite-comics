@@ -96,6 +96,9 @@ export default {
 
 
       <div class="thumbs">
+        <!-- v-for to loop through an array of cards and render a ProductCard component -->
+        <!-- :key attribute used to assign a unique key to each item in the array -->
+        <!-- :details attribute used to pass the details of the current card to the ProductCard component -->
         <ProductCard v-for="(card, index) in cards" :key="index" :details="card" class="card" />
       </div>
       <div class="more">

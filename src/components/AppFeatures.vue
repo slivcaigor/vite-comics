@@ -37,8 +37,11 @@ export default {
 <template>
   <section class="features">
     <div class="container">
+      <!-- v-for loop through an array of features and render a div element for each item in the array. -->
       <div v-for="(item, index) in features" :key="index" class="item">
+        <!-- src and alt attribute, being dynamically bound to the icon and alt properties of the current item in the array. -->
         <img :src="item.icon" :alt="item.alt">
+        <!-- double mustaches ({{}}) to insert the value of the text property of the current item in the array -->
         <h3>{{ item.text }}</h3>
       </div>
     </div>

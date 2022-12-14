@@ -1,5 +1,6 @@
 <script>
 export default {
+  // a props object that defines a single property named details, which is expected to be an object.
   props: {
     details: Object
   }
@@ -7,16 +8,15 @@ export default {
 </script>
 
 <template>
-
-
   <div class="cards">
+    <!-- src attribute and an alt attribute, both being dynamically bound to the component's details data property using the : prefix. -->
     <img :src="details.thumb" :alt="details.series">
+    <!-- double mustaches ({{}}) to insert the values of the price and series properties of the details data property -->
     <h5>{{ details.price }}</h5>
     <h3>{{ details.series }}</h3>
+    <!-- span text content is being set to the value of the type property of the details data property. -->
     <span class="label">{{ details.type }}</span>
   </div>
-
-
 </template>
 
 
